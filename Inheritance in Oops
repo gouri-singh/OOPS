@@ -1,0 +1,104 @@
+//Single Inheritance
+#include<iostream>
+using namespace std;
+
+class Vehicle
+{
+    protected:
+    string name;
+};
+class Car : public Vehicle
+{
+    int model;
+    public:
+    Car(string n, int m)
+    {
+        name = n;
+        model = m;
+    }
+    void display()
+    {
+        cout<<name<<" "<<model<<endl;
+    }
+};
+int main()
+{
+    Car obj("Mahindra" ,20);
+    obj.display();
+}
+********************************************************************************************************************************************************************************************************************
+//Multilevel Inheritance
+#include<iostream>
+using namespace std;
+
+class Vehicle
+{
+    protected:
+    string name;
+};
+
+class Car : public Vehicle
+{
+    protected:
+    int model;
+};
+
+class Electric : public Car
+{
+  int year;
+  public:
+  Electric(string n, int m, int y )
+  {
+    name = n;
+    model = m;
+    year = y;
+  }
+  void display()
+  {
+    cout<<name<<" "<<model<<" "<<year;
+  }
+};
+
+int main()
+{
+    Electric obj("Mahindra" ,20, 2026 );
+    obj.display();
+}
+*************************************************************************************************************************************************************************************************************************
+//Multiple Inheritance
+#include<iostream>
+using namespace std;
+
+class Vehicle
+{
+    protected:
+    string name;
+};
+
+class Car
+{
+    protected:
+    int model;
+};
+
+class Electric : public Vehicle, public Car
+{
+  int year;
+  public:
+  Electric(string n, int m, int y )
+  {
+    name = n;
+    model = m;
+    year = y;
+  }
+  void display()
+  {
+    cout<<name<<" "<<model<<" "<<year;
+  }
+};
+
+int main()
+{
+    Electric obj("Mahindra" ,20, 2026 );
+    obj.display();
+}
