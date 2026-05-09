@@ -1,0 +1,26 @@
+//Implementing Polymorphism
+#include<iostream>
+using namespace std;
+
+class Shape
+{
+  int length;
+  int breadth;
+  
+  public:
+  int area(int l, int b)
+  {
+    return(l*b);
+  }
+  int area(int side)
+  {
+    return(side*side);
+  }
+};
+
+int main()
+{
+  Shape obj;
+  cout<<"Area of Rectangle is:"<<obj.area(5,4)<<endl;
+  cout<<"Area of Square is:"<<obj.area(2)<<endl;
+}
