@@ -1,3 +1,5 @@
+//COMPILE TIME POLYMORPHISM
+
 //Implementing Function Overloading in Polymorphism
 #include<iostream>
 using namespace std;
@@ -66,3 +68,30 @@ int main()
   c3.display();
 }
 *********************************************************************************************************************************************************************
+//RUN-TIME POLYMORPHISM
+
+//Implementing Polymorphism using abstract class and a pure virtual function
+#include<iostream>
+using namespace std;
+
+class Human
+{
+  public:
+  virtual void display() = 0;
+};
+class Person : public Human
+{
+  public:
+  void display()
+  {
+    cout<<"Person class display function";
+  }
+};
+
+int main()
+{
+  Human *obj;
+  obj = new Person();
+  obj->display();
+}
+********************************************************************************************************************************************************************
